@@ -47,7 +47,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let disneyland = MKPointAnnotation()
         disneyland.coordinate = location
-        disneyland.title = "Disneyland-The Happiest Place in the World!"
+        disneyland.title = "The Happiest Place in the World!"
         map.addAnnotation(disneyland)
         
         // add gesture recognizer
