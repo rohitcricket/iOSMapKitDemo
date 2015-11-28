@@ -14,6 +14,7 @@
 		9BF219A61C0940C8002225A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF219A41C0940C8002225A9 /* LaunchScreen.storyboard */; };
 		9BF219B11C0940C8002225A9 /* mapKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF219B01C0940C8002225A9 /* mapKitDemoTests.swift */; };
 		9BF219BC1C0940C8002225A9 /* mapKitDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF219BB1C0940C8002225A9 /* mapKitDemoUITests.swift */; };
+		9BF219CA1C09724C002225A9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF219C91C09724C002225A9 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9BF219B71C0940C8002225A9 /* mapKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mapKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF219BB1C0940C8002225A9 /* mapKitDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapKitDemoUITests.swift; sourceTree = "<group>"; };
 		9BF219BD1C0940C8002225A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BF219C91C09724C002225A9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF219CA1C09724C002225A9 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +80,7 @@
 		9BF2198F1C0940C8002225A9 = {
 			isa = PBXGroup;
 			children = (
+				9BF219C91C09724C002225A9 /* CoreLocation.framework */,
 				9BF2199A1C0940C8002225A9 /* mapKitDemo */,
 				9BF219AF1C0940C8002225A9 /* mapKitDemoTests */,
 				9BF219BA1C0940C8002225A9 /* mapKitDemoUITests */,

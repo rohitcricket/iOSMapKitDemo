@@ -8,15 +8,27 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     
     @IBOutlet weak var map: MKMapView!
     
+    let locationManager = CLLocationManager()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // User's location
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
         
         let lattiude : CLLocationDegrees = 33.8090
         let longitude : CLLocationDegrees = -117.9190
@@ -56,14 +68,34 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     func mapLongPress(recognizer: UIGestureRecognizer) {
         
-        print("A long press has been detected!")
+        print("A long press has been detected.")
         
         let touchedAt = recognizer.locationInView(self.map)
         let touchedAtCoordinate : CLLocationCoordinate2D = map.convertPoint(touchedAt, toCoordinateFromView: self.map)
-        
         let newPin = MKPointAnnotation()
         newPin.coordinate = touchedAtCoordinate
         map.addAnnotation(newPin)
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+       // print(locations)
+        
+        var currentLocation : CLLocation = locations[0] as! CLLocation
+        
+        var longitude = currentLocation.coordinate.longitude
+        var latitude = currentLocation.coordinate.latitude
+        
+        var location : CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        var latitudeDelta : CLLocationDegrees = 0.03
+        var longitudeDelta : CLLocationDegrees = 0.03
+        let span : MKCoordinateSpan = MKCoordinateSpanMake(latitudeDelta, longitudeDelta)
+        
+        let region : MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        self.map.setRegion(region, animated: true)
+        
+        
         
     }
 
